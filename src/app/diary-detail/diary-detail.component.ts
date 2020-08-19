@@ -1,4 +1,4 @@
-import { Component, OnInit , Input,Output} from '@angular/core';
+import { Component, OnInit , Input,Output, EventEmitter} from '@angular/core';
 import { Diary } from '../diary';
 
 @Component({
@@ -12,7 +12,7 @@ export class DiaryDetailComponent implements OnInit {
 
 
 
-  @Output() deleteRequest = new EventEmitter<diary>();
+  @Output() deleteRequest = new EventEmitter<Diary>();
 
   delete() {
     this.deleteRequest.emit(this.diary);

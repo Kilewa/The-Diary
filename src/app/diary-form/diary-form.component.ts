@@ -12,7 +12,7 @@ export class DiaryFormComponent implements OnInit {
 @Output() addDiary = new EventEmitter<Diary>();
 
   submitGoal(){
-this.addDiary.emit(this.newDiary);
+    this.addDiary.emit(this.newDiary);
   }
   constructor() { }
 

@@ -17,9 +17,8 @@ export class DiaryComponent implements OnInit {
   ];
   addNewDiary(diary){
     let diaryLength = this.diaries.length;
-    diary.id = diaryLength+1;
-    diary.completeDate = new Date(diary.completeDate)
-    this.diaries.push(diary)
+      diary.id = diaryLength+1;
+      this.diaries.push(diary)
   }
   toggleDetails(index){
     this.diaries[index].showDescription = !this.diaries[index].showDescription;
