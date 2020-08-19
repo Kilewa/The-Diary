@@ -6,5 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  diary = 'Meeting Clients'
+  diaries:string[];
+
+  constructor(){
+    this.diaries = ['Visited Lake Nakuru park', 'Sweet moments at Diani beach', 'Graduated from Moringa School']
+  } 
 }
