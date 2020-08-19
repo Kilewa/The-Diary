@@ -1,1 +1,9 @@
-<p>diary works!</p>
+<div>
+    <h1>My Diaries</h1>
+    <ul>
+        <li *ngFor='let diary of diaries'>
+            {{ diary.name }}
+            <app-diary-detail [diary]='diary'></app-diary-detail>
+        </li>
+    </ul>
+</div>
