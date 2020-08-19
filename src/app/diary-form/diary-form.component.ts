@@ -11,7 +11,7 @@ export class DiaryFormComponent implements OnInit {
   newDiary = new Diary(0,"","",new Date());
 @Output() addDiary = new EventEmitter<Diary>();
 
-  submitGoal(){
+  submitDiary(){
     this.addDiary.emit(this.newDiary);
   }
   constructor() { }
