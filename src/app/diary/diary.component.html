@@ -1,9 +1,23 @@
-<div>
-    <h1>My Diaries</h1>
-    <ul>
-        <li *ngFor='let diary of diaries'>
-            {{ diary.name }}
-            <app-diary-detail [diary]='diary'></app-diary-detail>
-        </li>
-    </ul>
-</div>
+<div class="container">
+    <div class="container">
+        <h1>MY Diaries</h1>
+        <hr>
+
+        <div class="row">
+            <div class="col-md-6">
+                <div *ngFor='let diary of diaries;let i = index'>
+                    <div>
+                        <h6 id={{i}} appStrikethrough>{{diary.name}} happened on {{diary.diaryDate|date|uppercase}}</h6>
+                        <button (click)='toggleDetails(i)' class="btn btn-primary">More Details</button>
+                    </div>
+
+                    <div *ngIf='diary.showDescription'>
+                        <app-diary-detail [diary]='diary' (isComplete)='deleteGoal($event,i)'></app-diary-detail>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <app-diary-form (addDiary)="addNewDiary($event)"></app-diary-form>
+           </div>
+        </div>
+    </div>
